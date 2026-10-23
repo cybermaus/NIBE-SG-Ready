@@ -335,7 +335,7 @@ script:
                 // Is minute m inside the window s..e? (s = start, e = stop)
                 // e before s means the window crosses midnight.
                 auto in_window = [](int m, int s, int e) -> bool {
-                  if (e => s) {
+                  if (e >= s) {
                     return (m >= s) && (m < e);
                   }
                   return (m >= s) || (m < e);
